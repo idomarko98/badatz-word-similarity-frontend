@@ -2,6 +2,7 @@ import { Box, Tabs, Tab } from "@mui/material";
 import React, { useState } from "react";
 import { SearchPage } from "./pages/SearchPage";
 import { StatsPage } from "./pages/StatsPage";
+import { AddWordPage } from "./pages/AddWordPage";
 
 export default function Home() {
   const [value, setValue] = useState(0);
@@ -30,17 +31,9 @@ export default function Home() {
           <Tab label="Check Stats" {...a11yProps(2)} />
         </Tabs>
       </Box>
-      {value == 0 && (
-        <div>
-          <SearchPage />
-        </div>
-      )}
-      {value == 1 && <div>Item 2</div>}
-      {value == 2 && (
-        <div>
-          <StatsPage />
-        </div>
-      )}
+      {value == 0 && <SearchPage />}
+      {value == 1 && <AddWordPage />}
+      {value == 2 && <StatsPage />}
     </>
   );
 }
