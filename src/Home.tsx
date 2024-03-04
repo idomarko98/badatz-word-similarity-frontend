@@ -31,9 +31,9 @@ export default function Home() {
           <Tab label="Check Stats" {...a11yProps(2)} />
         </Tabs>
       </Box>
-      {value == 0 && <SearchPage />}
-      {value == 1 && <AddWordPage />}
-      {value == 2 && <StatsPage />}
+      {value === 0 && <SearchPage />}
+      {value === 1 && <AddWordPage />}
+      {value === 2 && <StatsPage />}
     </>
   );
 }
