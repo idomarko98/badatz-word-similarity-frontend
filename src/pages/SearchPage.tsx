@@ -38,7 +38,7 @@ export function SearchPage() {
 
       <div>
         {isLoading && <div>Loading data...</div>}
-        {error && <div>Error fetching data: {data}</div>}
+        {error && <div>Error fetching data: {error}</div>}
         {data && <WordList similarWords={data.similar} />}
       </div>
     </>
