@@ -12,9 +12,7 @@ export function SearchPage() {
     fetch(url).then((res) => {
       return res.json();
     });
-  const { data, error, isLoading } = useSWR(url, fetcher, {
-    refreshInterval: 1000,
-  });
+  const { data, error, isLoading } = useSWR(url, fetcher);
 
   function search() {
     setUrl(`http://localhost:8080/api/v1/similar?word=${searchValue}`);
