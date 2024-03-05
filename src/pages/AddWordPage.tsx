@@ -2,6 +2,7 @@ import { Button, TextField } from "@mui/material";
 import { useState } from "react";
 import styled from "styled-components";
 import axios, { HttpStatusCode } from "axios";
+import { BASE_URL } from "../components/consts";
 
 export function AddWordPage() {
   const [wordToAdd, setWordToAdd] = useState("");
@@ -11,7 +12,7 @@ export function AddWordPage() {
     setMessage("");
 
     axios
-      .post("http://localhost:8080/api/v1/add-word", {
+      .post(`${BASE_URL}/add-word`, {
         word: `${wordToAdd}`,
       })
       .then(function (response) {

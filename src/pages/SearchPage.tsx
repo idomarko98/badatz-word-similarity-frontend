@@ -3,6 +3,7 @@ import { useState } from "react";
 import useSWR from "swr";
 import { WordList } from "../components/WordsList";
 import styled from "styled-components";
+import { BASE_URL } from "../components/consts";
 
 export function SearchPage() {
   const [searchValue, setSearchValue] = useState("");
@@ -15,7 +16,7 @@ export function SearchPage() {
   const { data, error, isLoading } = useSWR(url, fetcher);
 
   function search() {
-    setUrl(`http://localhost:8080/api/v1/similar?word=${searchValue}`);
+    setUrl(`${BASE_URL}/similar?word=${searchValue}`);
   }
 
   return (
