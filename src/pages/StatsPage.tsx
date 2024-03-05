@@ -28,7 +28,7 @@ export function StatsPage() {
       fromDateIso = dayjs(fromDate).toISOString();
     }
     if (toDate) {
-      fromDateIso = dayjs(toDate).toISOString();
+      toDateIso = dayjs(toDate).toISOString();
     }
 
     setUrl(`${BASE_URL}/stats?from=${fromDateIso}&to=${toDateIso}`);
